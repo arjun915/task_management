@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
 
-# Database setup
 class TaskManager:
     def __init__(self):
         self.conn = sqlite3.connect("tasks.db")
@@ -49,51 +48,6 @@ class TaskManager:
 
     def close(self):
         self.conn.close()
-# Function to add a task
-# def add_task(description, deadline=None,status=None):
-#     conn = sqlite3.connect("tasks.db")
-#     cursor = conn.cursor()
-#     cursor.execute("INSERT INTO tasks (description, deadline,status) VALUES (?, ?,?)", (description, deadline,status))
-#     conn.commit()
-#     conn.close()
-#     print("Task added successfully!")
-
-# # Function to view all tasks
-# def view_tasks(status=None):
-#     conn = sqlite3.connect("tasks.db")
-#     cursor = conn.cursor()
-#     if status:
-#         cursor.execute("SELECT * FROM tasks WHERE status = ?", (status,))
-#     else:
-#         cursor.execute("SELECT * FROM tasks")
-#     tasks = cursor.fetchall()
-#     conn.close()
-#     if not tasks:
-#         print("No tasks found.")
-#     else:
-#         for task in tasks:
-#             print(task)
-
-# # Function to update a task
-# def update_task(task_id, description=None, status=None):
-#     conn = sqlite3.connect("tasks.db")
-#     cursor = conn.cursor()
-#     if description:
-#         cursor.execute("UPDATE tasks SET description = ? WHERE id = ?", (description, task_id))
-#     if status:
-#         cursor.execute("UPDATE tasks SET status = ? WHERE id = ?", (status, task_id))
-#     conn.commit()
-#     conn.close()
-#     print("Task updated successfully!")
-
-# # Function to delete a task
-# def delete_task(task_id):
-#     conn = sqlite3.connect("tasks.db")
-#     cursor = conn.cursor()
-#     cursor.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
-#     conn.commit()
-#     conn.close()
-#     print("Task deleted successfully!")
 
 # Command-line menu
 def main():
